@@ -1,0 +1,118 @@
+* {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: monospace;
+}
+
+body{
+        background: rgb(59, 57, 57);
+}
+
+.start-btn 
+.quiz-box{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+}
+
+.start-btn button {
+        font-size: 30px;
+        padding: 20px;
+        border-radius: 5px;
+        cursor: pointer;
+}
+
+.quiz-box {
+        width: 600px;
+        background: lightgrey;
+        border-radius: 5px;
+
+}
+
+.quiz-box header {
+        position: relative;
+        z-index: 99;
+        height: 50px;
+        padding: 0 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 5px;
+        box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.2);
+}
+
+ .title {
+        font-size: 20px;
+        font-weight: 600;
+}
+
+
+.quiz-box header .timer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 150px;
+        height: 50px;
+        background: lightpink;
+        border: 1px solid black;
+        border-radius: 5px;
+        padding: 0 8px;
+}
+
+.quiz-box header .timer-text {
+        font-weight: 400;
+        font-size: 12px;
+}
+
+.quiz-box header .timer .timer-seconds {
+        font-size: 14px;
+        font-weight: 500;
+        height: 30px;
+        width: 45px;
+        color: white;
+        line-height: 30px;
+        padding-left: 5px;
+        user-select: none;
+}
+
+.quiz-box section {
+        padding: 30px;
+        background: white;
+}
+
+.quiz-box section .question-text {
+        font-size: 25px;
+        font-weight: 600;
+
+}
+
+.quiz-box section .option-list {
+        padding: 20px 0;
+        display: block;
+}
+
+section .option-list .option {
+        border: 1px solid black;
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+}
+
+section .option-list .option:hover {
+        transform: translateY(-8px);
+}
+
+section .option-list .option:last-child {
+        margin-bottom: 0px;
+
+}
+
+.option-list .option .icon {
+
+}
