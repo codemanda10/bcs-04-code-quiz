@@ -9,12 +9,20 @@ body{
         background: rgb(59, 57, 57);
 }
 
-.start-btn 
-.quiz-box{
+.start-btn, 
+.quiz-box, 
+.result-box {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+}
+
+.quiz-box.activeQuiz{
+        z-index: 5;
+        opacity: 1;
+        pointer-events: auto;
+        transform: translate(-50%, -50%) scale(1);
 }
 
 .start-btn button {
@@ -28,7 +36,9 @@ body{
         width: 600px;
         background: lightgrey;
         border-radius: 5px;
-
+        pointer-events: none;
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.9);
 }
 
 .quiz-box header {
@@ -93,11 +103,19 @@ body{
         display: block;
 }
 
+footer .next-btn {
+        font-size: 15px;
+        padding: 5px;
+        border-radius: 5px;
+        cursor: pointer;
+}
+
+
 section .option-list .option {
         border: 1px solid black;
         border-radius: 5px;
         padding: 10px;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -110,9 +128,58 @@ section .option-list .option:hover {
 
 section .option-list .option:last-child {
         margin-bottom: 0px;
-
 }
 
 .option-list .option .icon {
+
+}
+
+.quiz-box footer {
+        height: 50px;
+        width: 100%;
+}
+
+.quiz-box footer .total-questions span {
+        display: flex;
+        user-select: none;
+}
+
+footer .total-questions span p {
+        font-weight: 500;
+        padding: 0 5px;
+}
+
+.total-questions span p:first-child {
+        padding-left: 5px
+}
+
+.result-box {
+        display: ;
+        background: white;
+        width: 450px;
+        padding: 25px;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        justify-content: space-between;
+}
+
+.result-box .complete-text {
+        display: flex;
+        font-size: 15px;
+        margin: 10px 0;
+        font-weight: 500;
+        flex-direction: column;
+}
+
+
+.result-box .score-text span {
+        display: flex;
+}
+
+.score-text span p {
+      font-weight: 500;
+      padding: 0 4px;
 
 }
