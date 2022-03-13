@@ -174,7 +174,7 @@ footer .total-questions span p {
 }
 
 .result-box {
-        display: ;
+        display: flex;
         background: white;
         width: 450px;
         padding: 25px;

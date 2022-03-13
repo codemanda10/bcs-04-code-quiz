@@ -10,19 +10,17 @@ startBtn.onclick = () =>{
 }
 var questionCount = 0;
 var questionNumb = 1;
-var userScore = 0;
-var counter;
-var counterLine;
-var widthValue = 0;
 
-const nextBtn = document.querySelector("footer .next-btn");
+const nextBtn = document.querySelector(".next-btn");
 
 //if next button clicked
-nextBtn.onClick = () => {
+nextBtn.onclick = ()=>{
         if (questionCount < questions.length - 1) {
                 questionCount++;
+                questionNumb++;
                 showQuestions(questionCount);
-        } else {
+                questionCounter(questionNumb);
+        }else{
                 console.log("Questions Completed");
         }
 }
@@ -36,10 +34,20 @@ nextBtn.onClick = () => {
                         + '<div class="option">' + questions[index].options[2] + '<span></span></div>'
                 questionText.innerHTML = questionTag;
                 optionList.innerHTML = optionTag;
+                const option = optionList.querySelectorAll(".option");
+                for (var i = 0; i < option.length; i++) {
+                        option[i].setAttribute("onclick", "optionSelected(this");
+                }
+}
+
+function optionSelected(answer) {
+        var userAns = answer.textContent;
+        var correctAns = questions[questionCount].answer;
+        console.log(userAns);
 }
         
-function questionCounter() {
-        const lowerqCounter = quizBox.querySelector(".total-questions");
+function questionCounter(index) {
+        const lowerQuestionCounter = quizBox.querySelector(".total-questions");
         var totalQuestionCountTag = '<span><p>' + questionCount + '</p>Of<p>' + questions.length + '</p>Questions</span>';
-        lowerqCounter.innerHTML = totalQuestionCountTag;
+        lowerQuestionCounter.innerHTML = totalQuestionCountTag;
 }
