@@ -35,15 +35,17 @@ nextBtn.onclick = ()=>{
                 questionText.innerHTML = questionTag;
                 optionList.innerHTML = optionTag;
                 const option = optionList.querySelectorAll(".option");
-                for (var i = 0; i < option.length; i++) {
-                        option[i].setAttribute("onclick", "optionSelected(this");
+                for (i = 0; i < option.length; i++) {
+                        option[i].setAttribute("onclick", "optionSelected(this)");
                 }
 }
 
 function optionSelected(answer) {
         var userAns = answer.textContent;
         var correctAns = questions[questionCount].answer;
-        console.log(userAns);
+        if (userAns == correctAns) {
+                console.log("Answer is correct");
+        }
 }
         
 function questionCounter(index) {
