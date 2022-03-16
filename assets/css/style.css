@@ -208,3 +208,34 @@ footer .total-questions span p {
 .hide {
         display: none;
 }
+
+.save-box {
+        display: flex;
+        background: white;
+        width: 450px;
+        padding: 25px;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        justify-content: space-between;
+}
+
+.input-group {
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+
+.hide {
+        display: none;
+}
+
+.save-score {
+        font-weight: 500;
+        padding: 0 4px;
+  }
+
+  .save {
+        margin-top: 10px;
+        margin-bottom: 10px;
+  }

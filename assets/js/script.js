@@ -4,9 +4,15 @@ const timeCount = quizBox.querySelector(".timer-seconds");
 
 const optionList = document.querySelector(".option-list");
 
+var initialsInput = document.querySelector("#initials-input");
+var scoreInput = document.querySelector("#score-input");
+var saveBtn = document.querySelector("#save");
+var submitForm = document.querySelector("submit-form");
+
 //when start quiz button is clicked
 startBtn.onclick = () =>{
         startBtn.classList.remove("activeStart") //hide the start btn
+
         quizBox.classList.add("activeQuiz") //show the quiz box
         showQuestions(0);
         questionCounter(1);
@@ -99,3 +105,28 @@ function questionCounter(index) {
         var totalQuestionCountTag = '<span><p>' + questionCount + '</p>Of<p>' + questions.length + '</p>Questions</span>';
         lowerQuestionCounter.innerHTML = totalQuestionCountTag;
 }
+
+
+//if signup button clicked
+saveBtn.onclick = (() => {
+})
+
+
+const user = JSON.parse(localStorage.getItem("user")) || [];
+console.log(user);
+
+  // create user object from submission
+  const userScore = {
+          initials: initialsInput,
+        score: scoreInput
+};
+console.log(user)
+submitForm.addEventListener("submit", () => {
+        saveBtn.disabled = !initialsInput.value;
+    })
+
+
+// set new submission to local storage 
+localStorage.setItem("initialsInput", JSON.stringify(user));
+localStorage.setItem("scoreInput", JSON.stringify(user));
+  
